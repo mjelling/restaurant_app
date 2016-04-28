@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="nine columns">
+      <h1>Order Station</h1>
+    </div>
+    <div class="three columns">
+      <h1>Order</h1>
+    </div>
+  </div>
+  <div class="row">
+      <% @menu.each do |category, items| %>
+      <div class="three columns">
+        <h2><%= category %></h2>
+          <% items.each do |item| %>
+            <p> <%= item.name %> <%= button_to "", add_menu_item_to_party_order_path(@party), method: :post, params: { menu_item_id: item.id }, class: 'add_button'%></p>
+            <% end %>
+      </div>
+      <% end %>
+    <div class="three columns">
+      <h2>Ticket</h2>
+      <% @party.order.menu_items.each do |item| %>
+        <p> <%= item.name %> <%= button_to "", remove_menu_item_from_party_order_path(@party), method: :delete, params: { menu_item_id: item.id }, class: 'remove_button'%> </p>
+    <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="three columns"
+      <p><a><%= link_to "Back to Your Work Station", server_path %></a></p>
+    </div>
+  </div>
+</div>

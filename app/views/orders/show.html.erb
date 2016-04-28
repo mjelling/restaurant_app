@@ -1,0 +1,11 @@
+<h1>Receipt</h1>
+
+<ul>
+  <% @order.menu_items.each do |item| %>
+  <li><%= item.name %> - <%= number_to_currency item.price %></li>
+  <% end %>
+
+
+<li><strong>Total:</strong> <%= number_to_currency @order.total_price %></li>
+<li><a><%= link_to "Back to Your Work Station", server_path %></a></li>
+</ul>

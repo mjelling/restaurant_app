@@ -1,0 +1,92 @@
+body {
+  background-image: url("http://i1.ytimg.com/vi/AqnIqzwRU_k/maxresdefault.jpg");
+  background-size: 100% 95%;
+  background-attachment: fixed;
+  font-weight: bold;
+  margin-top: 4em;
+  }
+.add_button {
+  height: 2em;
+  width: 2em;
+  color: white:
+  border: 5em;
+  background-image: url("http://thumb10.shutterstock.com/thumb_small/615538/319735067/stock-photo-rounded-plus-glyph-icon-style-is-flat-symbol-white-color-rounded-angles-black-background-319735067.jpg");
+  background-size: 6.1em 3.2em;
+  }
+.remove_button {
+  height: 2em;
+  width: 2em;
+  color: white:
+  border: 5em;
+  background-image: url("https://t1.ftcdn.net/jpg/00/90/29/62/500_F_90296217_1Pxm0rHeU2uqQyBUSY0gaoczJ8xhzAfq.jpg");
+  background-size: 5em 3.2em;
+  }
+.new{
+  background-color: black;
+  color: white;
+  margin-left:2em;
+  margin-right: 5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.log_in{
+  background-color: black;
+  color: white;
+  margin-left:2em;
+  margin-right: 5em;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+h1 {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  margin-bottom: 1em;
+}
+h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+p{
+  display: inline;
+  font-size: 1.5em;
+  color: white;
+  background-color: black;
+  padding: 1em
+  margin-bottom: 5em;
+  }
+li{
+  list-style-type: none;
+  color: white;
+  background-color: black;
+  padding-left: 3em;
+  margin-left:2em;
+  margin-right: 50em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  }
+a{
+  text-decoration: none;
+  background-color: black;
+  }/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */

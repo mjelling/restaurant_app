@@ -1,0 +1,36 @@
+<h1>New Menu Item</h1>
+
+<div class="new">
+  <div class="container">
+    <div class="row">
+      <%= form_for @menu_item do |f| %>
+      <div class="one column">
+        <%= f.label :name %>
+      </div>
+      <div class="three columns">
+        <%= f.text_field :name %>
+      </div>
+      <div class="one column">
+        <%= f.label :kind %>
+      </div>
+      <div class="three  columns">
+        <%= f.text_field :kind %>
+      </div>
+      <div class="one column">
+        <%= f.label :price %>
+      </div>
+      <div class="two columns">
+        <%= f.text_field :price %>
+        <%= f.submit %>
+      </div>
+      <% end %>
+      <div class= "row">
+        <div class= "one column">
+        </div>
+        <div class="five columns"
+          <a><%= link_to "Back to Administration Station", admin_path %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

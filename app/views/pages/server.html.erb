@@ -1,0 +1,11 @@
+<h1>Your Work Station</h1>
+  <ul>
+  <% @parties.each do |party| %>
+      <li> <%= party.name %> -
+      <a><%= link_to "Edit Order", edit_party_order_path(party) %></a> -
+      <a><%= link_to "Delete Party", party_path(party), method: :delete %></a> -
+      <a><%= link_to "Receipt", party_order_path(party) %></a> </li>
+  <% end %>
+
+<li><a><%= link_to "New Party", new_party_path %></a></li>
+<li><a><%= link_to "Logout", destroy_session_path, method: :delete %></a></li>

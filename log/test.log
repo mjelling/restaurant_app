@@ -1,0 +1,26 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (8.5ms)[0m  INSERT INTO "menu_items" ("name", "kind", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Beer"], ["kind", "Appetizer"], ["price", "5.5"], ["created_at", "2016-04-24 22:23:50.602783"], ["updated_at", "2016-04-24 22:23:50.602783"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "menu_items" ("name", "kind", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nachos"], ["kind", "Appetizer"], ["price", "3.5"], ["created_at", "2016-04-24 22:23:50.617078"], ["updated_at", "2016-04-24 22:23:50.617078"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "parties" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Test"], ["created_at", "2016-04-24 22:23:50.660099"], ["updated_at", "2016-04-24 22:23:50.660099"]]
+  [1m[36mSQL (8.3ms)[0m  [1mINSERT INTO "orders" ("party_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["party_id", 1], ["created_at", "2016-04-24 22:23:50.673960"], ["updated_at", "2016-04-24 22:23:50.673960"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("party_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["party_id", 1], ["created_at", "2016-04-24 22:23:50.685512"], ["updated_at", "2016-04-24 22:23:50.685512"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (11.9ms)[0m  [1mINSERT INTO "menu_items_orders" ("order_id", "menu_item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 2], ["menu_item_id", 1]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "menu_items_orders" ("order_id", "menu_item_id") VALUES ($1, $2) RETURNING "id"  [["order_id", 2], ["menu_item_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "menu_items_orders" ("order_id", "menu_item_id") VALUES ($1, $2) RETURNING "id"[0m  [["order_id", 2], ["menu_item_id", 2]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMenuItem Load (0.5ms)[0m  [1mSELECT "menu_items".* FROM "menu_items" INNER JOIN "menu_items_orders" ON "menu_items"."id" = "menu_items_orders"."menu_item_id" WHERE "menu_items_orders"."order_id" = $1[0m  [["order_id", 2]]
+  [1m[35m (0.3ms)[0m  ROLLBACK

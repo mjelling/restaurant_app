@@ -1,0 +1,25 @@
+<h1>Please Submit Your Credentials</h1>
+
+<%= form_tag '/sessions', method: :post do %>
+  <div class="log_in">
+    <div class= "container">
+      <div class= "row">
+        <div class= "two columns">
+          <%= label_tag :username %>
+        </div>
+        <div class= "three columns">
+          <%= text_field_tag :username %>
+        </div>
+        <div class= "two columns">
+          <%= label_tag :password %>
+        </div>
+        <div class= "three columns">
+          <%= password_field_tag :password %>
+        </div>
+        <div class= "two columns">
+          <%= submit_tag "Log In" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
