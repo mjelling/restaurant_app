@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-if Rails.env.development?
+# if Rails.env.development?
   User.create(username: 'jeff', email: 'j@j.com', password: 'a', admin: true)
   User.create(username: 'matt', email: 'j@j.com', password: 'a', admin: false)
 
@@ -21,4 +21,4 @@ if Rails.env.development?
   MenuItem.create(name: 'Cheesebuger', kind: 'Entree', price: 13.75)
   MenuItem.create(name: 'Steak', kind: 'Entree', price: 15.34)
   MenuItem.create(name: 'Hot Dog', kind: 'Entree', price: 9.25)
-end
+# end
