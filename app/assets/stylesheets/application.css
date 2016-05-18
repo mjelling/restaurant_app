@@ -8,7 +8,7 @@ body {
 .add_button {
   height: 2em;
   width: 2em;
-  color: white:
+  color: white;
   border: 5em;
   background-image: url("http://thumb10.shutterstock.com/thumb_small/615538/319735067/stock-photo-rounded-plus-glyph-icon-style-is-flat-symbol-white-color-rounded-angles-black-background-319735067.jpg");
   background-size: 6.1em 3.2em;
@@ -16,7 +16,7 @@ body {
 .remove_button {
   height: 2em;
   width: 2em;
-  color: white:
+  color: white;
   border: 5em;
   background-image: url("https://t1.ftcdn.net/jpg/00/90/29/62/500_F_90296217_1Pxm0rHeU2uqQyBUSY0gaoczJ8xhzAfq.jpg");
   background-size: 5em 3.2em;
@@ -75,7 +75,9 @@ li{
 a{
   text-decoration: none;
   background-color: black;
-  }/*
+  }
+
+  /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
