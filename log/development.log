@@ -25540,3 +25540,181 @@ Processing by OrdersController#show as HTML
   [1m[36mMenuItem Load (0.3ms)[0m  [1mSELECT "menu_items".* FROM "menu_items" INNER JOIN "menu_items_orders" ON "menu_items"."id" = "menu_items_orders"."menu_item_id" WHERE "menu_items_orders"."order_id" = $1[0m  [["order_id", 8]]
   Rendered orders/show.html.erb within layouts/application (2.6ms)
 Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-05-18 14:16:05 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (25.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#log_in as HTML
+  Rendered users/log_in.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 382ms (Views: 373.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-18 14:16:06 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-18 14:16:06 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-18 14:16:06 -0400
+
+
+Started GET "/assets/administrator.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-18 14:16:06 -0400
+
+
+Started GET "/assets/server.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-18 14:16:06 -0400
+
+
+Started GET "/assets/application.self-0fa231832cc7e8fede47939734e320341ff47451e441376899aa9b5f3b062309.css?body=1" for ::1 at 2016-05-18 14:16:06 -0400
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-18 14:16:06 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-18 14:16:06 -0400
+
+
+Started POST "/sessions" for ::1 at 2016-05-18 14:16:13 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h1PCnJIdJZNrBB1fhnFA5gEgx3QPm19e5zrD/B5tcQlzG4OLP6TLd4YPlXQ7U4xfzU+6UV9QthHHjO7d0WQe9w==", "username"=>"matt", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (24.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "matt"]]
+Redirected to http://localhost:9292/server
+Completed 302 Found in 143ms (ActiveRecord: 44.0ms)
+
+
+Started GET "/server" for ::1 at 2016-05-18 14:16:13 -0400
+Processing by PagesController#server as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mParty Load (11.4ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."user_id" = 2
+  Rendered pages/server.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 43ms (Views: 19.6ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/parties/8/order/edit" for ::1 at 2016-05-18 14:16:25 -0400
+Processing by OrdersController#edit as HTML
+  Parameters: {"party_id"=>"8"}
+  [1m[36mParty Load (1.9ms)[0m  [1mSELECT  "parties".* FROM "parties" WHERE "parties"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mOrder Load (11.4ms)[0m  SELECT  "orders".* FROM "orders" WHERE "orders"."party_id" = $1 LIMIT 1  [["party_id", 8]]
+  [1m[36mMenuItem Load (24.5ms)[0m  [1mSELECT "menu_items".* FROM "menu_items"[0m
+  [1m[35mMenuItem Load (13.1ms)[0m  SELECT "menu_items".* FROM "menu_items" INNER JOIN "menu_items_orders" ON "menu_items"."id" = "menu_items_orders"."menu_item_id" WHERE "menu_items_orders"."order_id" = $1  [["order_id", 8]]
+  Rendered orders/edit.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 130ms (Views: 40.3ms | ActiveRecord: 55.4ms)
+
+
+Started DELETE "/parties/8" for ::1 at 2016-05-18 14:16:30 -0400
+Processing by PartiesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"id+N5PkxZ2FG1DPcFNYDHAAHFMh0A/txVTZ/DX/33359l8zzVIiJhavfu/ep9M+lzGhp7STIEj51gFIssP6wgA==", "id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mParty Load (0.1ms)[0m  SELECT  "parties".* FROM "parties" WHERE "parties"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.9ms)[0m  DELETE FROM "parties" WHERE "parties"."id" = $1  [["id", 8]]
+  [1m[36m (7.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:9292/server
+Completed 302 Found in 16ms (ActiveRecord: 13.5ms)
+
+
+Started GET "/server" for ::1 at 2016-05-18 14:16:30 -0400
+Processing by PagesController#server as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mParty Load (0.2ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = 2[0m
+  Rendered pages/server.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sessions" for ::1 at 2016-05-18 14:16:43 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h1PCnJIdJZNrBB1fhnFA5gEgx3QPm19e5zrD/B5tcQlzG4OLP6TLd4YPlXQ7U4xfzU+6UV9QthHHjO7d0WQe9w==", "username"=>"jeff", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "jeff"]]
+Redirected to http://localhost:9292/admin
+Completed 302 Found in 63ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for ::1 at 2016-05-18 14:16:43 -0400
+Processing by PagesController#admin as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered pages/admin.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2016-05-18 14:16:47 -0400
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/new.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for ::1 at 2016-05-18 14:16:57 -0400
+Processing by PagesController#admin as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered pages/admin.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/sessions" for ::1 at 2016-05-18 14:17:00 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YBQ0DOPyx5de8cnSZHzjR36IOIFINDV6rZx8kUPCw+OUXHUbTkspc7P6QfnZXi/+sudFpBj/3DWNKlGwjMusHQ=="}
+Redirected to http://localhost:9292/users/log_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/log_in" for ::1 at 2016-05-18 14:17:00 -0400
+Processing by UsersController#log_in as HTML
+  Rendered users/log_in.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2016-05-18 14:17:06 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"36smfvro0hwRWTt0mBZLKVZcPdz5oedWY7JkNa1PN5wr42dpV1E8+PxSs18lNIeQmjNA+alqDhlDBEkUYkZYYg==", "username"=>"matt", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "matt"]]
+Redirected to http://localhost:9292/server
+Completed 302 Found in 62ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/server" for ::1 at 2016-05-18 14:17:06 -0400
+Processing by PagesController#server as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mParty Load (0.2ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."user_id" = 2
+  Rendered pages/server.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/parties/new" for ::1 at 2016-05-18 14:17:09 -0400
+Processing by PartiesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered parties/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/server" for ::1 at 2016-05-18 14:17:21 -0400
+Processing by PagesController#server as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mParty Load (0.2ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = 2[0m
+  Rendered pages/server.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/parties/new" for ::1 at 2016-05-18 14:17:23 -0400
+Processing by PartiesController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered parties/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/parties" for ::1 at 2016-05-18 14:17:29 -0400
+Processing by PartiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c2HuFJfqu4tTt9WAA32AhVjLt9VkR677zWMjnsgFD7uHKa8DOlNVb768Xau+X0w8lKTK8DSMR7Tt1Q6/BwxgRQ==", "party"=>{"name"=>"jelling", "table_number"=>"4"}, "commit"=>"Create Party"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "parties" ("name", "table_number", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "jelling"], ["table_number", 4], ["user_id", 2], ["created_at", "2016-05-18 18:17:29.278385"], ["updated_at", "2016-05-18 18:17:29.278385"]]
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "orders" ("party_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["party_id", 9], ["created_at", "2016-05-18 18:17:29.281400"], ["updated_at", "2016-05-18 18:17:29.281400"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:9292/server
+Completed 302 Found in 9ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/server" for ::1 at 2016-05-18 14:17:29 -0400
+Processing by PagesController#server as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mParty Load (0.2ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."user_id" = 2[0m
+  Rendered pages/server.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.4ms)
